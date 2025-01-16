@@ -3,8 +3,7 @@
 # This script analysis basic server performance
 
 # Total CPU usage
-echo 'Total CPU usage:'
-# top
+top -bn1 | grep "%Cpu(s):" | cut -d ',' -f 4 | awk '{print "Total CPU usage: " 100-$1 "%"}'
 echo
 
 # Total memory usage (Free vs Used including percentage)
