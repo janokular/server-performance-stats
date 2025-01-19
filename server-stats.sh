@@ -7,13 +7,11 @@ top -bn1 | grep "%Cpu(s):" | cut -d ',' -f 4 | awk '{print "Total CPU usage: " 1
 echo
 
 # Total memory usage (Free vs Used including percentage)
-echo 'Total memory usage:'
-# free
+free -h | grep "Mem:" | awk '{print "Total memory usage: " ($3/$4)*100 "%"}'
 echo
 
 # Total disk usage (Free vs Used including percentage)
-echo 'Total disk usage:'
-# df
+df --total | grep "total" | awk '{print "Total disk usage: " $5}'
 echo
 
 # Top 5 processes by CPU usage
