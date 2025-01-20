@@ -16,10 +16,10 @@ echo
 
 # Top 5 processes by CPU usage
 echo 'Top 5 processes by CPU usage:'
-# ps
+ps axu --sort %cpu | tail -n 5 | tac
 echo
 
 # Top 5 processes by memory usage
 echo 'Top 5 processes by memory usage:'
-# ps
+ps axu --sort %mem | tail -n 5 | tac
 echo
