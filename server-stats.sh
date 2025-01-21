@@ -4,6 +4,7 @@
 
 # Total CPU usage
 top -bn1 | grep "%Cpu(s):" | cut -d ',' -f 4 | awk '{print "Total CPU usage: " 100-$1 "%"}'
+grep "cpu[^0-9]" /proc/stat | awk '{print ($5*100)/($2+$3+$4+$5+$6+$7+$8+$9+$10)}' | awk '{print "Total CPU usage: " 100-$1 "%"}'
 echo
 
 # Total memory usage (Free vs Used including percentage)
