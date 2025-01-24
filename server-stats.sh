@@ -1,5 +1,5 @@
 #!/bin/bash
-#
+
 # This script analysis basic server performance
 
 # Clear terminal window
