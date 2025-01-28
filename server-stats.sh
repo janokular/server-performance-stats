@@ -24,10 +24,10 @@ echo
 
 # Top 5 processes by CPU usage
 echo "Top 5 processes by CPU usage:"
-ps axu --sort %cpu | tail -n 5 | tac | awk '{print $1 " " $2 " " $3 " " $11}' | column -t
+ps axu --sort %cpu | tail -n 5 | tac | awk '{print $1,$2,$3,$11}' | column -t
 echo
 
 # Top 5 processes by memory usage
 echo "Top 5 processes by memory usage:"
-ps axu --sort %mem | tail -n 5 | tac | awk '{ print $1 " " $2 " " $4 " " $11 }' | column -t
+ps axu --sort %mem | tail -n 5 | tac | awk '{ print $1,$2,$4,$11}' | column -t
 echo
